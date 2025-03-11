@@ -3,6 +3,7 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -18,6 +19,7 @@ public class DashboardPage {
    By product2= By.xpath("//button[@id='add-to-cart-sauce-labs-bike-light']");
    By product3= By.xpath("//button[@id='add-to-cart-sauce-labs-bolt-t-shirt']");
    By product4= By.xpath("//button[@id='add-to-cart-sauce-labs-onesie']");
+   By dash_title=By.xpath("//span[@class='title']");
 
 
 
@@ -56,7 +58,13 @@ public class DashboardPage {
         driver.findElement(product3).click();
         driver.findElement(product4).click();
 
+    }
 
+    public String  GetTitle (){
+
+        String tile=wait.until(ExpectedConditions.visibilityOf(driver.findElement(dash_title))).getText();
+
+        return tile;
 
     }
 
