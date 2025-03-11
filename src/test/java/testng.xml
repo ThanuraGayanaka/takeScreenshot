@@ -1,0 +1,11 @@
+<suite name="AutomationSuite">
+    <listeners>
+        <listener class-name="Listeners.TestListener"/>
+    </listeners>
+
+    <test name="Login Tests">
+        <classes>
+            <class name="Testpages.LoginTest"/>
+        </classes>
+    </test>
+</suite>
